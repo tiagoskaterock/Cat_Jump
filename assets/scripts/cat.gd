@@ -1,16 +1,18 @@
 extends KinematicBody2D
 
+const GRAVITY = 2000
+const SPEED = 500
+const JUMP_FORCE = -900
 
-# Declare member variables here. Examples:
-# var a: int = 2
-# var b: String = "text"
+var linear_velocity = Vector2(0, 0)
+var is_jumping = false
+var is_moving = false
+var is_alive = true
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	set_process_input(true)
 
+func _physics_process(delta: float) -> void:
+	pass
+	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	pass

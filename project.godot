@@ -17,6 +17,7 @@ _global_script_class_icons={
 
 config/name="Cat_Jump"
 run/main_scene="res://assets/scenes/game.tscn"
+boot_splash/image="res://icon.png"
 boot_splash/bg_color=Color( 0.768627, 0.117647, 0.882353, 1 )
 config/icon="res://icon.png"
 

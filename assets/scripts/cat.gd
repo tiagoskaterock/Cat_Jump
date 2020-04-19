@@ -13,6 +13,7 @@ func _ready() -> void:
 	set_process_input(true)
 
 func _physics_process(delta: float) -> void:
+	play_animations()
 	linear_velocity.y += + GRAVITY * delta
 	if is_alive:
 		if is_on_floor():
@@ -32,6 +33,7 @@ func _physics_process(delta: float) -> void:
 	linear_velocity = move_and_slide(linear_velocity, Vector2(0, -1))
 			
 func morte():
+	is_alive = false
 	print("morreu")
 	
 # touch screen
@@ -42,3 +44,15 @@ func _input(event: InputEvent) -> void:
 			is_jumping = true
 		else:
 			is_moving = false
+
+func play_animations():
+	if is_alive:
+		if is_on_floor():
+			$animation.play("idle")
+		else:
+			if linear_velocity.y > 0:
+				$animation.play("fall")
+			elif linear_velocity.y < 0:
+				$animation.play("jump")
+	else:
+		$animation.play("dead")

@@ -27,14 +27,17 @@ func _physics_process(delta: float) -> void:
 	
 	is_jumping = false
 
+	# morre quando cai
 	if position.y > get_viewport_rect().size.y:
-		morte()
+		die()
 		
 	linear_velocity = move_and_slide(linear_velocity, Vector2(0, -1))
 			
-func morte():
-	is_alive = false
-	print("morreu")
+func die():
+	if is_alive:
+		is_alive = false
+		linear_velocity = Vector2(0, JUMP_FORCE * 2)
+		$animation.play("dead")
 	
 # touch screen
 func _input(event: InputEvent) -> void:

@@ -1,18 +1,22 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/packaged_scenes/cat.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/packaged_scenes/ground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/scripts/ground_group.gd" type="Script" id=3]
 
 [node name="game" type="Node2D"]
 
 [node name="cat" parent="." instance=ExtResource( 1 )]
 position = Vector2( 239.071, 295.993 )
 
-[node name="ground_group" type="Node2D" parent="."]
+[node name="ground_group" type="Node2D" parent="." groups=[
+"node_ground_group",
+]]
 z_index = -1
+script = ExtResource( 3 )
 
 [node name="ground" parent="ground_group" instance=ExtResource( 2 )]
-position = Vector2( 241.347, 1000.87 )
+position = Vector2( 203.399, 993.281 )
 
 [node name="ground2" parent="ground_group" instance=ExtResource( 2 )]
-position = Vector2( 531.27, 1100.49 )
+position = Vector2( 542.654, 1221.92 )

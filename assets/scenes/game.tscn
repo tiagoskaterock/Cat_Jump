@@ -9,11 +9,16 @@
 [node name="cat" parent="." instance=ExtResource( 1 )]
 position = Vector2( 239.071, 295.993 )
 
+[node name="Camera2D" type="Camera2D" parent="cat"]
+current = true
+limit_bottom = 1200
+
 [node name="ground_group" type="Node2D" parent="." groups=[
 "node_ground_group",
 ]]
 z_index = -1
 script = ExtResource( 3 )
+ground = ExtResource( 2 )
 
 [node name="ground" parent="ground_group" instance=ExtResource( 2 )]
 position = Vector2( 203.399, 993.281 )

@@ -7,7 +7,7 @@
 [node name="game" type="Node2D"]
 
 [node name="cat" parent="." instance=ExtResource( 1 )]
-position = Vector2( 181.532, 295.993 )
+position = Vector2( 188.924, -154.938 )
 
 [node name="Camera2D" type="Camera2D" parent="cat"]
 position = Vector2( 300, 0 )

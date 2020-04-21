@@ -1,17 +1,13 @@
 extends StaticBody2D
 
 var is_moving = false
-var speed = 100
-var maxSpeed = 500
-var minSpeed = 20
 
 func _ready():
-	randomize()
-	speed = int(rand_range(minSpeed, maxSpeed))	
+	calcSpeed()
 	
 func _physics_process(delta: float) -> void:
 	if is_moving:
-		position.y += speed * delta		
+		position.y += calcSpeed() * delta		
 		if position.y > get_viewport_rect().size.y + 320:
 			queue_free()
 
@@ -20,3 +16,8 @@ func _on_area_body_entered(body: PhysicsBody2D) -> void:
 		is_moving = true
 		get_tree().call_group("node_ground_group", "generate_ground", position.x)
 		
+func calcSpeed():
+	var maxSpeed = 700
+	var minSpeed = 50
+	randomize()	
+	return int(rand_range(minSpeed, maxSpeed))	

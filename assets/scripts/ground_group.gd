@@ -14,13 +14,14 @@ func generate_ground(current_position_x):
 	
 func calcHeight():
 	var maxHeight = 1000
-	var minHeight = 1050
+	var minHeight = 1120
 	randomize()
 	return int(rand_range(minHeight, maxHeight))
 	
 func calcDistance():
-	var maxDistance = 650
-	var minDistance = 550
-	randomize()
-	return int(rand_range(minDistance, maxDistance))
+#	var maxDistance = 650
+#	var minDistance = 550
+#	randomize()
+#	return int(rand_range(minDistance, maxDistance))
+	return 700
 	

@@ -4,7 +4,8 @@ var is_moving = false
 var speed = 100
 
 func _ready():
-	pass
+	randomize()
+	speed = int(rand_range(100, 300))
 	
 func _physics_process(delta: float) -> void:
 	if is_moving:
@@ -14,7 +15,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_body_entered(body: PhysicsBody2D) -> void:
 	if body.name == "cat" and not is_moving:
-		print("_on_area_body_entered()")
 		is_moving = true
 		get_tree().call_group("node_ground_group", "generate_ground", position.x)
 		

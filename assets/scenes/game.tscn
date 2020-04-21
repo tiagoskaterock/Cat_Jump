@@ -10,7 +10,9 @@
 position = Vector2( 181.532, 295.993 )
 
 [node name="Camera2D" type="Camera2D" parent="cat"]
+position = Vector2( 300, 0 )
 current = true
+limit_top = 0
 limit_bottom = 1200
 
 [node name="ground_group" type="Node2D" parent="." groups=[
@@ -21,7 +23,7 @@ script = ExtResource( 3 )
 ground = ExtResource( 2 )
 
 [node name="ground" parent="ground_group" instance=ExtResource( 2 )]
-position = Vector2( 203.399, 993.281 )
+position = Vector2( 218.886, 1364.97 )
 
 [node name="ground2" parent="ground_group" instance=ExtResource( 2 )]
 position = Vector2( 542.654, 1221.92 )

@@ -45,11 +45,6 @@ animations = [ {
 "name": "idle",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 22 ), ExtResource( 28 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ) ],
-"loop": false,
-"name": "fall",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 21 ), ExtResource( 27 ), ExtResource( 25 ), ExtResource( 23 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ) ],
 "loop": false,
 "name": "jump",
@@ -59,6 +54,11 @@ animations = [ {
 "loop": false,
 "name": "dead",
 "speed": 12.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 28 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ) ],
+"loop": false,
+"name": "fall",
+"speed": 10.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -75,6 +75,7 @@ __meta__ = {
 [node name="animation" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
+frame = 6
 playing = true
 
 [node name="collision" type="CollisionShape2D" parent="."]

@@ -1,24 +1,26 @@
 extends Node2D
 
-export (PackedScene) var ground
-
-var distance = 320
-var maxDistance = 600
-var minDistance = 700	
+export (PackedScene) var ground	
 
 func _ready():
 	pass
 
-func generate_ground(current_position_x):
-	randomize()
-	distance = int(rand_range(minDistance, maxDistance))
-	print("distance: " + str(distance))
-	
+func generate_ground(current_position_x):	
 	var new_ground = ground.instance()
-	var new_position = Vector2(distance + current_position_x, 1150)
+	var new_position = Vector2(calcDistance() + current_position_x, calcHeight())
 	
 	new_ground.position = new_position
 	add_child(new_ground)
 	
-func teste():
-	pass
+func calcHeight():
+	var maxHeight = 1000
+	var minHeight = 1400
+	randomize()
+	return int(rand_range(minHeight, maxHeight))
+	
+func calcDistance():
+	var maxDistance = 600
+	var minDistance = 550
+	randomize()
+	return int(rand_range(minDistance, maxDistance))
+	

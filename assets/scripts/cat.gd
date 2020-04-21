@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 	if position.y > get_viewport_rect().size.y:
 		die()
 		
-	linear_velocity = move_and_slide(linear_velocity, Vector2(0, -1))
+	move_and_slide(linear_velocity, Vector2(0, -1))
 			
 func die():
 	if is_alive:

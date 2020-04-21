@@ -2,8 +2,8 @@ extends StaticBody2D
 
 var is_moving = false
 var speed = 100
-var maxSpeed = 300
-var minSpeed = 50
+var maxSpeed = 500
+var minSpeed = 20
 
 func _ready():
 	randomize()

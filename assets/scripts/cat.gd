@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 const GRAVITY = 3500
 const SPEED = 800
-const JUMP_FORCE = -1600
+const JUMP_FORCE = -1000
 
 var linear_velocity = Vector2(0, 0)
 var is_jumping = false

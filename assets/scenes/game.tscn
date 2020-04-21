@@ -23,7 +23,7 @@ script = ExtResource( 3 )
 ground = ExtResource( 2 )
 
 [node name="ground" parent="ground_group" instance=ExtResource( 2 )]
-position = Vector2( 218.886, 1364.97 )
+position = Vector2( 218.886, 1050 )
 
 [node name="ground2" parent="ground_group" instance=ExtResource( 2 )]
-position = Vector2( 542.654, 1221.92 )
+position = Vector2( 542.654, 1050 )

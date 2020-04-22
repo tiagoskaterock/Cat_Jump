@@ -1,4 +1,6 @@
 extends CanvasLayer
 
-func _ready():
-	pass
+var points = 0
+
+func count_score():
+	points += 1

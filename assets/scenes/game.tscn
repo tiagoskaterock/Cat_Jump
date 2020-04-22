@@ -1,10 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/packaged_scenes/cat.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/packaged_scenes/ground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/scripts/ground_group.gd" type="Script" id=3]
 [ext_resource path="res://assets/sprites/objects/bg.png" type="Texture" id=4]
 [ext_resource path="res://assets/sprites/objects/water.png" type="Texture" id=5]
+[ext_resource path="res://assets/fonts/Bubblegum.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 120
+outline_size = 20
+outline_color = Color( 0.882353, 0.0980392, 0.0980392, 1 )
+use_mipmaps = true
+use_filter = true
+extra_spacing_char = 30
+font_data = ExtResource( 6 )
 
 [node name="game" type="Node2D"]
 
@@ -51,3 +61,22 @@ motion_mirroring = Vector2( 1024, 0 )
 [node name="sprite_fg" type="Sprite" parent="foreground/parallax_fg"]
 position = Vector2( 381.184, 1225.24 )
 texture = ExtResource( 5 )
+
+[node name="hud" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="score" type="Label" parent="hud"]
+margin_top = 95.8172
+margin_right = 720.0
+margin_bottom = 356.817
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "0
+
+"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

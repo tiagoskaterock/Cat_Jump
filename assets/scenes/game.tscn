@@ -63,7 +63,9 @@ motion_mirroring = Vector2( 1024, 0 )
 position = Vector2( 381.184, 1225.24 )
 texture = ExtResource( 5 )
 
-[node name="hud" type="CanvasLayer" parent="."]
+[node name="hud" type="CanvasLayer" parent="." groups=[
+"hud_group",
+]]
 layer = 2
 script = ExtResource( 7 )
 

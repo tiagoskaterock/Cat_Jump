@@ -15,6 +15,7 @@ func _on_area_body_entered(body: PhysicsBody2D) -> void:
 	if body.name == "cat" and not is_moving:
 		is_moving = true
 		get_tree().call_group("node_ground_group", "generate_ground", position.x)
+		get_tree().call_group("hud_group", "count_score")
 		
 func calcSpeed():
 	var maxSpeed = 700

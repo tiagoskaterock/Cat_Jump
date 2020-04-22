@@ -1,15 +1,28 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/packaged_scenes/cat.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/packaged_scenes/ground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/scripts/ground_group.gd" type="Script" id=3]
+[ext_resource path="res://assets/sprites/objects/bg.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/objects/water.png" type="Texture" id=5]
 
 [node name="game" type="Node2D"]
+
+[node name="background" type="ParallaxBackground" parent="."]
+
+[node name="parallax_bg" type="ParallaxLayer" parent="background"]
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 1750, 0 )
+
+[node name="sprite_bg" type="Sprite" parent="background/parallax_bg"]
+position = Vector2( 789.468, 657.148 )
+scale = Vector2( 1.79169, 1.79169 )
+texture = ExtResource( 4 )
 
 [node name="cat" parent="." instance=ExtResource( 1 )]
 position = Vector2( 188.924, -154.938 )
 
-[node name="Camera2D" type="Camera2D" parent="cat"]
+[node name="camera" type="Camera2D" parent="cat"]
 position = Vector2( 200, 0 )
 current = true
 limit_top = 0
@@ -23,7 +36,18 @@ script = ExtResource( 3 )
 ground = ExtResource( 2 )
 
 [node name="ground" parent="ground_group" instance=ExtResource( 2 )]
-position = Vector2( 218.886, 1050 )
+position = Vector2( 184.886, 1108.73 )
 
 [node name="ground2" parent="ground_group" instance=ExtResource( 2 )]
 position = Vector2( 497.104, 1056.51 )
+
+[node name="foreground" type="ParallaxBackground" parent="."]
+layer = 1
+
+[node name="parallax_fg" type="ParallaxLayer" parent="foreground"]
+motion_scale = Vector2( 1.1, 1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="sprite_fg" type="Sprite" parent="foreground/parallax_fg"]
+position = Vector2( 381.184, 1225.24 )
+texture = ExtResource( 5 )

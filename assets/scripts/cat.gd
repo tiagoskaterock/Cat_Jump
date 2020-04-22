@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 func die():
 	if is_alive:
 		is_alive = false
-		linear_velocity = Vector2(0, JUMP_FORCE * 1.5)
+		linear_velocity = Vector2(0, JUMP_FORCE * 2)
 		$animation.play("dead")
 	
 # touch screen

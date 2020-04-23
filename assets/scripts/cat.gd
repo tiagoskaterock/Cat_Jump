@@ -38,6 +38,7 @@ func die():
 		is_alive = false
 		linear_velocity = Vector2(0, JUMP_FORCE * 2)
 		$animation.play("dead")
+		get_tree().call_group("hud_group", "game_over")
 	
 # touch screen
 func _input(event: InputEvent) -> void:

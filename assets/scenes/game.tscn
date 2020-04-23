@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/packaged_scenes/cat.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/packaged_scenes/ground.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://assets/fonts/Bubblegum.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/scripts/hud.gd" type="Script" id=7]
 [ext_resource path="res://assets/sprites/objects/game_over.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/objects/restart_button.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/objects/menu_button.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
@@ -139,3 +141,13 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="restart" type="TouchScreenButton" parent="hud/game_over"]
+position = Vector2( 53.7426, 137.203 )
+normal = ExtResource( 9 )
+pressed = ExtResource( 9 )
+
+[node name="menu" type="TouchScreenButton" parent="hud/game_over"]
+position = Vector2( -142.057, 137.203 )
+normal = ExtResource( 10 )
+pressed = ExtResource( 10 )

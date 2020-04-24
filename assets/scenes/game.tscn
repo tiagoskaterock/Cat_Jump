@@ -152,3 +152,4 @@ position = Vector2( -142.057, 137.203 )
 normal = ExtResource( 10 )
 pressed = ExtResource( 10 )
 [connection signal="pressed" from="hud/game_over/restart" to="hud" method="_on_restart_pressed"]
+[connection signal="pressed" from="hud/game_over/menu" to="hud" method="_on_menu_pressed"]
